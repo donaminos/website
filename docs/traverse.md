@@ -23,6 +23,7 @@ const code = `function square(n) {
 
 const ast = parser.parse(code);
 
+// NOTE: If you encounter the error `TypeError: traverse is not a function`, make sure to use `traverse.default`.
 traverse(ast, {
   enter(path) {
     if (path.isIdentifier({ name: "n" })) {
